@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+interface ContainerProps {
+  available: boolean;
+}
+
 export const Container = styled.div`
   background: #f0f0f5;
   border-radius: 8px;
@@ -12,7 +16,7 @@ export const Container = styled.div`
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
+    ${(props: ContainerProps) =>
     !props.available &&
     css`
         opacity: 0.3;
@@ -23,7 +27,6 @@ export const Container = styled.div`
       user-select: none;
     }
   }
-
   section.body {
     padding: 30px;
 
